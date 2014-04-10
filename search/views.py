@@ -9,6 +9,6 @@ def index(request):
     details = request.POST['details']
     p=parse(str(details))
     print p
-    return HttpResponse(p['name'])
+    return HttpResponse(p['price'])
   else:
     return render(request, 'search/index.html')
