@@ -7,17 +7,18 @@ def parse(url):
 
   if url.find('flipkart')>=0:
     html = D.get(url)
-    item_name = xpath.get(html,'//h1[@itemprop="name"]//text()')
-    item_price = xpath.get(html, '//span[@class="fk-font-verybig pprice fk-bold"]//text()')
-    item_image = xpath.get(html,'//div[@class="image-wrapper"]/img/@src')
+    item={}
+    item['name'] = xpath.get(html,'//h1[@itemprop="name"]//text()')
+    item['price'] = xpath.get(html, '//span[@class="fk-font-verybig pprice fk-bold"]//text()')
+    item['image'] = xpath.get(html,'//div[@class="image-wrapper"]/img/@src')
 
-    print item_name, item_price, item_image
+    return item    
 
   else:
     html = D.get(url)
-    item_name = xpath.get(html ,'//span[@id="productTitle"]//text()')
-    item_price = xpath.get(html,'//span[@id="priceblock_ourprice"]//text()')
-    item_image = xpath.get(html, '//div[@class="imgTagWrapper"]/img/@src')
+    item={}
+    item['name'] = xpath.get(html ,'//span[@id="productTitle"]//text()')
+    item['price'] = xpath.get(html,'//span[@id="priceblock_ourprice"]//text()')
+    item['image'] = xpath.get(html, '//div[@class="imgTagWrapper"]/img/@src')
 
-    print item_name, item_price, item_image
-
+    return item

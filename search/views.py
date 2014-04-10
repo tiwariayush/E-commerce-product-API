@@ -8,6 +8,7 @@ def index(request):
   if 'details' in request.POST:
     details = request.POST['details']
     p=parse(str(details))
-    return HttpResponse(p)
+    print p
+    return HttpResponse(p['name'])
   else:
     return render(request, 'search/index.html')
