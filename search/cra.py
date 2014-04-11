@@ -7,6 +7,7 @@ def parse(url):
 
   if url.find('flipkart')>=0:
     html = D.get(url)
+# Downloads the whole page cache and save in webscraping log and then scrape data from it
     item={}
     item['name'] = xpath.get(html,'//h1[@itemprop="name"]//text()')
     item['price'] = xpath.get(html, '//span[@class="fk-font-verybig pprice fk-bold"]//text()')
