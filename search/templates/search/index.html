@@ -10,6 +10,12 @@
 <input name='details'>
 <input type='submit' value='Submit'/>
 </form>
+<ul>
+{% for key , value in p.items %}
+  <li>{{key}}-{{value}}</li>
+ {% endfor %}
+</ul>
+
 </body>
 </html>
 

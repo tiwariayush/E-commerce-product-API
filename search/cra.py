@@ -9,6 +9,7 @@ def parse(url):
     html = D.get(url)
 # Downloads the whole page cache and save in webscraping log and then scrape data from it
     item={}
+    import pdb; pdb.set_trace;
     item['name'] = xpath.get(html,'//h1[@itemprop="name"]//text()')
     item['price'] = xpath.get(html, '//span[@class="fk-font-verybig pprice fk-bold"]//text()')
     item['image'] = xpath.get(html,'//div[@class="image-wrapper"]/img/@src')
