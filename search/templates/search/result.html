@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title>Product Details</title>
+</head>
+
+<body>
+
+<ul>
+<li>Product Name -{{p.name}}
+<li>Product Price -{{p.price}}
+<li><img src={{p.image}}>
+</ul>
+<p><a href="{% url 'search.views.index' %}">New Search</a>
+</body>
+</html>

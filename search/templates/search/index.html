@@ -7,14 +7,9 @@
 <body>
 <form action ='' method='post'>{% csrf_token %}
 <h1>Enter the product url</h1>
-<input name='details'>
+{{form.as_p}}
 <input type='submit' value='Submit'/>
 </form>
-<ul>
-{% for key , value in p.items %}
-  <li>{{key}}-{{value}}</li>
- {% endfor %}
-</ul>
 
 </body>
 </html>
