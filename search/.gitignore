@@ -1,1 +1,3 @@
 *.pyc
+.cra/
+.extract/
