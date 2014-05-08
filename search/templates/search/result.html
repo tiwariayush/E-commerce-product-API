@@ -8,9 +8,9 @@
 <body>
 
 <ul>
-<li>Product Name -{{p.name}}
-<li>Product Price -{{p.price}}
-<li><img src={{p.image}}>
+<li>Product Name -{{product_info.name}}
+<li>Product Price -{{product_info.price}}
+<li><img src={{product_info.image}}>
 </ul>
 <p><a href="{% url 'search.views.index' %}">New Search</a>
 </body>
