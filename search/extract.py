@@ -1,3 +1,4 @@
+import sys
 import csv
 from urlparse import urlparse
 from webscraping import download , xpath
@@ -6,8 +7,8 @@ def extract(url):
 
   D = download.Download()
 
-  file = open('website.csv', 'rb')
-  reader = csv.reader(file)
+  f = open('website.csv', 'rb')
+  reader = csv.reader(f)
   row = list(reader)
 
   for r in range(0,3):
@@ -23,3 +24,7 @@ def extract(url):
       item['image'] = xpath.get(html, '%s' % xpath3)
 
       print item
+
+if __name__ == '__main__':
+   url="".join( sys.argv[1:] )
+   extract(url)
